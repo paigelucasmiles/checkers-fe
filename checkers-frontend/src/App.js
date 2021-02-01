@@ -45,6 +45,7 @@ function App() {
     })
     .then(response => response.json())
     .then(result => setUser(result))
+    .then(login(username, password))
   }
 
   const login = (username, password) => {
@@ -69,7 +70,12 @@ function App() {
         setError(result.error)
       }
     })
-  }  
+  }
+
+  const logout = (event) => {
+    localStorage.removeItem("token");
+    setUser({})
+  }
 
   return (
     <div className="App">
@@ -78,6 +84,7 @@ function App() {
         <Route exact path="/profile" render={(renderProps) => <Profile username={user.username} /> }/>
         <Route exact path='/login' render={(renderProps) => <Login login={login} errorMessage={error} /> } />
         <Route exact path='/signup' render={(renderProps) => <SignUp signUp={signUp} />} />
+        {user.username ? <input type="submit" onClick={logout} value="logout"/> : null}
     </div>
   );
 }

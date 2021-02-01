@@ -8,7 +8,9 @@ export default function Board({
     legalMoves, 
     turn,
     updateCurrentPlayerAction,
-    selectedPieceLocation }) {
+    selectedPawnLocation, 
+    updateSelectedPawnLocation, 
+    movePawn }) {
     
     const renderPawns = (squareCoordinates) => {
         if(whitePawnPositions.find(whitePawn => whitePawn === squareCoordinates)) {
@@ -59,7 +61,9 @@ export default function Board({
                     currentPlayerAction={currentPlayerAction}
                     legalMoves={legalMoves}
                     updateCurrentPlayerAction={updateCurrentPlayerAction}
-                    selectedPieceLocation={selectedPieceLocation}
+                    selectedPawnLocation={selectedPawnLocation}
+                    updateSelectedPawnLocation={updateSelectedPawnLocation}
+                    movePawn={movePawn}
                 /> 
             }
         }

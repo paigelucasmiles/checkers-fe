@@ -29,6 +29,18 @@
     width: 70px;
 }
 
+.blue {
+    background-color: rgb(154, 192, 224);
+    border: 1px solid rgb(154, 192, 224);
+    float: left;
+    height: 70px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 70px;
+}
+
 .white {
     position: relative;
     height: 25px;
@@ -67,3 +79,4 @@
     border: 2px solid red;
     border-radius: 25px;
 }
+

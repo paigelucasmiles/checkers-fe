@@ -7,7 +7,10 @@ export default function Square({color,
     currentPlayerAction, 
     coordinates, 
     updateCurrentPlayerAction, 
-    selectedPieceLocation}) {
+    selectedPawnLocation, 
+    updateSelectedPawnLocation, 
+    legalMoves, 
+    movePawn }) {
 
     const renderPawns = () => {
         if(occupied === 'white') {
@@ -15,7 +18,8 @@ export default function Square({color,
             currentPlayerAction={currentPlayerAction} 
             updateCurrentPlayerAction={updateCurrentPlayerAction}
             coordinates={coordinates}
-            selectedPieceLocation={selectedPieceLocation}
+            selectedPawnLocation={selectedPawnLocation}
+            updateSelectedPawnLocation={updateSelectedPawnLocation}
             />
         } else {
             if (occupied === 'black') {
@@ -23,14 +27,28 @@ export default function Square({color,
                 currentPlayerAction={currentPlayerAction} 
                 updateCurrentPlayerAction={updateCurrentPlayerAction}
                 coordinates={coordinates}
-                selectedPieceLocation={selectedPieceLocation}
+                selectedPawnLocation={selectedPawnLocation}
+                updateSelectedPawnLocation={updateSelectedPawnLocation}
                 />
             }
         }
     }
 
+    const handleClick = (event) => {
+        event.stopPropagation()
+        movePawn(coordinates, occupied)
+    }
+
+    const highlightLegalMoves = () => {
+        if(legalMoves.includes(coordinates)) {
+            return("blue")
+        } else {
+            return(color)
+        }
+    }
+
     return (
-        <div className={color} >
+        <div className={highlightLegalMoves()} onClick={handleClick} >
             {renderPawns()}
         </div>
     )
