@@ -44,8 +44,8 @@ function App() {
       })
     })
     .then(response => response.json())
-    .then(result => setUser(result))
     .then(login(username, password))
+    .then(result => setUser(result))
   }
 
   const login = (username, password) => {

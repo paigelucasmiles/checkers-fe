@@ -46,66 +46,50 @@ export default function Game() {
     }
 
     const showLegalMoves = (currentPawnSelected, pawnColor) => {
-        const selectedPawnColumn = currentPawnSelected.split("")[0].charCodeAt(0)
-        const selectedPawnRow = parseInt(currentPawnSelected.split("")[1])
-
-        const columnOption1 = String.fromCharCode(selectedPawnColumn - 1)
-        const columnOption2 = String.fromCharCode(selectedPawnColumn + 1)
-
         if(pawnColor === 'white') {
-            console.log("i am a white pawn")
-            const rowOption = selectedPawnRow + 1
-            const legalOption1 = columnOption1.concat(rowOption)
-            const legalOption2 = columnOption2.concat(rowOption)
-            let allLegalOptions = [legalOption1, legalOption2]
-            const opponentToJump = allLegalOptions.filter(option => blackPawnPositions.includes(option))
-
-            opponentToJump.forEach((opponent) => {
-                const opponentColumn = opponent.split("")[0].charCodeAt(0)
-                const offsetFromSelectedPawn = opponentColumn - selectedPawnColumn
-
-                const jumpToColumn = selectedPawnColumn + (offsetFromSelectedPawn * 2)
-                const jumpToRow = parseInt(selectedPawnRow) + 2
-                const jumpToCoordinates = String.fromCharCode(jumpToColumn).concat(jumpToRow)
-
-                allLegalOptions = allLegalOptions.filter(legalOption => legalOption !== opponent)
-
-                allLegalOptions.push(jumpToCoordinates)
-            })
-
-            allLegalOptions = allLegalOptions.filter(legalOption => blackPawnPositions.includes(legalOption) === false && whitePawnPositions.includes(legalOption) === false)
-
-            setLegalMoves(allLegalOptions)
-            setCurrentPlayerAction(playerActions[currentPlayerAction])
+            showLegalMovesForPlayer("white", currentPawnSelected)
         }
-
         if(pawnColor === 'black') {
-            console.log("i am a black pawn")
-            const rowOption = selectedPawnRow - 1
-            const legalOption1 = columnOption1.concat(rowOption)
-            const legalOption2 = columnOption2.concat(rowOption)
-            let allLegalOptions = [legalOption1, legalOption2]
-            const opponentToJump = allLegalOptions.filter(option => whitePawnPositions.includes(option))
-
-            opponentToJump.forEach((opponent) => {
-                const opponentColumn = opponent.split("")[0].charCodeAt(0)
-                const offsetFromSelectedPawn = opponentColumn - selectedPawnColumn
-
-                const jumpToColumn = selectedPawnColumn + (offsetFromSelectedPawn * 2)
-                const jumpToRow = parseInt(selectedPawnRow) - 2
-                const jumpToCoordinates = String.fromCharCode(jumpToColumn).concat(jumpToRow)
-
-                allLegalOptions = allLegalOptions.filter(legalOption => legalOption !== opponent)
-
-                allLegalOptions.push(jumpToCoordinates)
-            })
-
-            allLegalOptions = allLegalOptions.filter(legalOption => whitePawnPositions.includes(legalOption) === false && blackPawnPositions.includes(legalOption) === false)
-
-            setLegalMoves(allLegalOptions)
-            setCurrentPlayerAction(playerActions[currentPlayerAction])
+            showLegalMovesForPlayer("black", currentPawnSelected)
         }
     }
+
+    
+    const showLegalMovesForPlayer = (player, currentPawnSelected) => {
+        const selectedPawnColumn = currentPawnSelected.split("")[0].charCodeAt(0)
+        const selectedPawnRow = parseInt(currentPawnSelected.split("")[1])
+        const columnOption1 = String.fromCharCode(selectedPawnColumn - 1)
+        const columnOption2 = String.fromCharCode(selectedPawnColumn + 1)
+        
+        const playerPawnPositions = player === 'white' ? whitePawnPositions : blackPawnPositions;
+        const opponentPawnPositions = player === 'white' ? blackPawnPositions : whitePawnPositions;
+        const directionOfPlay = player === 'white' ? 1 : -1;
+
+        const rowOption = selectedPawnRow + 1 * directionOfPlay
+        const legalOption1 = columnOption1.concat(rowOption)
+        const legalOption2 = columnOption2.concat(rowOption)
+        let allLegalOptions = [legalOption1, legalOption2]
+        const opponentToJump = allLegalOptions.filter(option => opponentPawnPositions.includes(option))
+
+        opponentToJump.forEach((opponent) => {
+            const opponentColumn = opponent.split("")[0].charCodeAt(0)
+            const offsetFromSelectedPawn = opponentColumn - selectedPawnColumn
+
+            const jumpToColumn = selectedPawnColumn + (offsetFromSelectedPawn * 2)
+            const jumpToRow = parseInt(selectedPawnRow) + 2 * directionOfPlay
+            const jumpToCoordinates = String.fromCharCode(jumpToColumn).concat(jumpToRow)
+
+            allLegalOptions = allLegalOptions.filter(legalOption => legalOption !== opponent)
+
+            allLegalOptions.push(jumpToCoordinates)
+        })
+
+        allLegalOptions = allLegalOptions.filter(legalOption => opponentPawnPositions.includes(legalOption) === false && playerPawnPositions.includes(legalOption) === false)
+
+        setLegalMoves(allLegalOptions)
+        setCurrentPlayerAction(playerActions[currentPlayerAction])
+    }
+
 
     const movePawn  = (clickedSquareCoordinates) => {
         if(legalMoves.find(legalOption => legalOption === clickedSquareCoordinates)) {
