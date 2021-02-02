@@ -1,7 +1,7 @@
 <h1>Module 4 Project | Flatiron School</h1>
 <h2>Checkers</h2>
 <p>
-This Checkers app was build as my Module 4 project at the Flatiron School Software Engineering Intensive (Denver, CO). The requirement was to build a web app, starting Monday for presentation Friday afternoon. I chose to build a checkers app to practice and stengthen programming more complex logic as well as moving state in React.<br>
+This Checkers app was built as my Module 4 project during my Flatiron School Software Engineering Intensive (Denver, CO). The requirement was to build a web app, starting Monday for presentation Friday afternoon of the same week. I chose to build a checkers app to practice and stengthen programming more complex logic as well as moving state in React.<br>
 <br>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” – Grimsley :zap:</br>
 </p>
 
