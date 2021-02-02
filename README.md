@@ -29,11 +29,10 @@ White goes first!
 <h3>As a user, you will be able to:</h3>
 
 <ol>
- <li>See a list of all first generation Pokemon names and pictures.</li>
- <li>see the list of Pokemon name and picture as a Pokemon card.</li>
- <li>Click on a Pokemon and see a page of its information.</li>
- <li>Search for a Pokemon using its name</li>
- <li>See more information about a pokemon in the back of the card.</li>
+ <li>Select a single pawn when it is your turn. A selected pawn will be highlighted red.</li>
+ <li>See the legal moves available to a selected pawn. Open squares that represent legal moves will be highlighted blue.</li>
+ <li>Deselect a pawn by clickling a selected pawn.</li>
+ <li>Make a single jump of an opponent pawn.</li>
 </ol>
 
 <h2>Status</h2>
@@ -48,8 +47,4 @@ With time, we would like to refactor our code and add features such as:
 <li>Add a button to navigate back to the top of the page.</li>
 
 <h2>Contact</h2>
-<a href="https://www.linkedin.com/in/tiffany-kanjanabout/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Tiffany Kanjanabout" style="width:10px;height:10px;"></a>Tiffany Kanjanabout :octocat:<br>
 <a href="https://www.linkedin.com/in/paigeamiles/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Paige Miles" style="width:10px;height:10px;"></a>Paige Miles :evergreen_tree:<br>
-
-<h2>API Reference</h2>
-[PokeAPI](https://pokeapi.co/)
