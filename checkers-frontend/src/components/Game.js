@@ -14,7 +14,6 @@ export default function Game() {
     "b7", "d7", "f7", "h7",
     "a8", "c8", "e8", "g8"])
 
-
     const [turn, setTurn] = useState("white")
 
     const [currentPlayerAction, setCurrentPlayerAction] = useState('click pawn')
@@ -28,12 +27,17 @@ export default function Game() {
 
     const [legalMoves, setLegalMoves] = useState([])
 
+    const [jumpableOpponent, setjumpableOpponent] = useState("")
+
+    const [locationAfterJump, setlocationAfterJump] = useState("")
+
     // game logic
 
+
     const updateCurrentPlayerAction = (lastAction) => {
-        const nextPlayerAction = playerActions[lastAction]
-        setCurrentPlayerAction(nextPlayerAction)
+        setCurrentPlayerAction(playerActions[lastAction])
     }
+
 
     const updateSelectedPawnLocation = (currentPawnSelected, pawnColor) => {
         if (currentPawnSelected === selectedPawnLocation) {
@@ -45,6 +49,7 @@ export default function Game() {
         }
     }
 
+
     const showLegalMoves = (currentPawnSelected, pawnColor) => {
         if(pawnColor === 'white') {
             showLegalMovesForPlayer("white", currentPawnSelected)
@@ -52,6 +57,25 @@ export default function Game() {
         if(pawnColor === 'black') {
             showLegalMovesForPlayer("black", currentPawnSelected)
         }
+    }
+
+
+    const adjustLegalMovesForJumpableOpponents = (opponentToJump, selectedPawnColumn, selectedPawnRow, directionOfPlay, allLegalOptions) => {
+        opponentToJump.forEach((opponent) => {
+            const opponentColumn = opponent.split("")[0].charCodeAt(0)
+            const offsetFromSelectedPawn = opponentColumn - selectedPawnColumn
+
+            const jumpToColumn = selectedPawnColumn + (offsetFromSelectedPawn * 2)
+            const jumpToRow = parseInt(selectedPawnRow) + 2 * directionOfPlay
+            const jumpToCoordinates = String.fromCharCode(jumpToColumn).concat(jumpToRow)
+
+            allLegalOptions = allLegalOptions.filter(legalOption => legalOption !== opponent)
+
+            allLegalOptions.push(jumpToCoordinates)
+
+            setlocationAfterJump(jumpToCoordinates)
+        })
+        return allLegalOptions;
     }
 
     
@@ -71,21 +95,13 @@ export default function Game() {
         let allLegalOptions = [legalOption1, legalOption2]
         const opponentToJump = allLegalOptions.filter(option => opponentPawnPositions.includes(option))
 
-        opponentToJump.forEach((opponent) => {
-            const opponentColumn = opponent.split("")[0].charCodeAt(0)
-            const offsetFromSelectedPawn = opponentColumn - selectedPawnColumn
-
-            const jumpToColumn = selectedPawnColumn + (offsetFromSelectedPawn * 2)
-            const jumpToRow = parseInt(selectedPawnRow) + 2 * directionOfPlay
-            const jumpToCoordinates = String.fromCharCode(jumpToColumn).concat(jumpToRow)
-
-            allLegalOptions = allLegalOptions.filter(legalOption => legalOption !== opponent)
-
-            allLegalOptions.push(jumpToCoordinates)
-        })
+        if(opponentToJump){
+            allLegalOptions = adjustLegalMovesForJumpableOpponents(opponentToJump, selectedPawnColumn, selectedPawnRow, directionOfPlay, allLegalOptions)
+        }
 
         allLegalOptions = allLegalOptions.filter(legalOption => opponentPawnPositions.includes(legalOption) === false && playerPawnPositions.includes(legalOption) === false)
 
+        setjumpableOpponent(opponentToJump)
         setLegalMoves(allLegalOptions)
         setCurrentPlayerAction(playerActions[currentPlayerAction])
     }
@@ -96,14 +112,27 @@ export default function Game() {
             if(turn === 'white') {
                 const newWhitePawnPositions = whitePawnPositions.filter(currentPosition => currentPosition !== selectedPawnLocation)
                 newWhitePawnPositions.push(clickedSquareCoordinates)
+
+            if (turn === 'white' && clickedSquareCoordinates === locationAfterJump) {
+                const newBlackPawnPositions = blackPawnPositions.filter(blackPawn => jumpableOpponent.includes(blackPawn) === false)
+                console.log("filter black pieces")
+                setBlackPawnPositions(newBlackPawnPositions)
+            }
                 setWhitePawnPositions(newWhitePawnPositions)
                 setSelectedPawnLocation("")
                 setLegalMoves([])
                 setTurn('black')
                 setCurrentPlayerAction(playerActions[currentPlayerAction])
+
             } else if(turn === 'black') {
                 const newBlackPawnPositions = blackPawnPositions.filter(currentPosition => currentPosition !== selectedPawnLocation)
                 newBlackPawnPositions.push(clickedSquareCoordinates)
+                
+                if(turn === 'black' && clickedSquareCoordinates === locationAfterJump) {
+                    const newWhitePawnPositions = whitePawnPositions.filter(whitePawn => jumpableOpponent.includes(whitePawn) === false)
+                    console.log("filter White pieces")
+                    setWhitePawnPositions(newWhitePawnPositions)
+                }
                 setBlackPawnPositions(newBlackPawnPositions)
                 setSelectedPawnLocation("")
                 setLegalMoves([])
@@ -112,7 +141,6 @@ export default function Game() {
             }
         }
     }
-
 
 
     return (
