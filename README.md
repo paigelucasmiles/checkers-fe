@@ -1,5 +1,4 @@
 <h1>Module 4 Project | Flatiron School</h1>
-<a href="https://imgur.com/vLKKJDE"><img src="https://i.imgur.com/vLKKJDE.png" title="source: imgur.com" /></a>
 <h2><img src="https://imgur.com/vLKKJDE" alt="Checkerboard Icon">Checkers</h2>
 <p>
 Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the PokeAPI, we created a Pokedex with the first Generation (Kanto) Pokemon. Our intention with this project was to work with a larger, more complex API and expand our knowledge on styling with CSS.<br>
