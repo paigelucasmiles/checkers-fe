@@ -1,15 +1,17 @@
 <h1>Module 4 Project | Flatiron School</h1>
-<h2><img src="https://imgur.com/vLKKJDE" alt="Checkerboard Icon">Checkers</h2>
+<h2>Checkers</h2>
 <p>
-Our Pokedex is a webapp that utilizes Javascript, HTML, and CSS. Utilizing the PokeAPI, we created a Pokedex with the first Generation (Kanto) Pokemon. Our intention with this project was to work with a larger, more complex API and expand our knowledge on styling with CSS.<br>
+This Checkers app was build as my Module 4 project at the Flatiron School Software Engineering Intensive (Denver, CO). The requirement was to build a web app, starting Monday for presentation Friday afternoon. I chose to build a checkers app to practice and stengthen programming more complex logic as well as moving state in React.<br>
 <br>“It’s more important to master the cards you’re holding than to complain about the ones your opponent was dealt.” – Grimsley :zap:</br>
 </p>
 
 <h2>Technologies</h2>
 
 <ul>
+ <li>Ruby on Rails</li>
+ <li>React.js</li>
  <li>JavaScript</li>
- <li>HTML5</li>
+ <li>HTML</li>
  <li>CSS</li>
 </ul>
 
