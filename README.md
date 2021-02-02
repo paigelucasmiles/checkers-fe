@@ -49,4 +49,4 @@ With time, I would like to refactor the code to reduce function size, repitition
 <li>Declare a winner at completion of the game.</li>
 
 <h2>Contact</h2>
-<a href="https://www.linkedin.com/in/paigelucasmiles/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Paige Miles" style="width:10px;height:10px;"></a>Paige Miles :evergreen_tree:<br>
+<a href="https://www.linkedin.com/in/paigelmiles/"><img src="https://user-images.githubusercontent.com/68958970/94946276-dc7b8a00-04a9-11eb-9431-366689b9fa06.png" alt="Paige Miles" style="width:10px;height:10px;"></a>Paige Miles :evergreen_tree:<br>
