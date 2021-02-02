@@ -16,7 +16,9 @@ This Checkers app was built as my Module 4 project during my Flatiron School Sof
 
 <h2>Setup</h2>
 To run this project, install it locally by cloning this GitHub repository and opening it in your code editor.<br><br>
-From there, navigate into the folder titled <b>checkers-backend</b> and run <code>bundle install</code>, <code>rails db:migrate</code> and finally, <code>rails s</code>in your terminal. You will need to start the server on port 3000.<br><br>
+From there, navigate into the folder titled <b>checkers-backend</b> and run <code>bundle install</code>, <code>rails db:migrate</code> and finally, <code>rails s</code> in your terminal. You will need to start the server on port 3000.<br><br>
+In a new terminal tab, navigate to the folder titled <b>checkers-frontend</b> and run <code>npm install</code>, then <code>npm start</code>. As Rails server is running on port 3000, you will be prompted to confirm running the app on another port. Confirm by typing <code>y</code>.
+
 This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>
 You are now ready to start using the first iteration of our Pokedex! Please see our features section to learn more!<br><br>
 
