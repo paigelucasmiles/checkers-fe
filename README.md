@@ -38,12 +38,12 @@ White goes first!
 
 <h2>Status</h2>
 
-With time, I would like to refactor the code to reduce function size, repitition and increase readability. I would also like to add the following features to complete functionality of the game:
+With time, I would like to refactor the code to reduce function size, repetition and increase readability. I would also like to add the following features to complete functionality of the game:
 
 <h3>As a user, you will be able to:</h3>
 
 <li>Jump more than one opponent at a time.</li>
-<li>Create a king when you reach your opponents side of the board.</li>
+<li>Create a king when you reach your opponent's side of the board.</li>
 <li>Move a king backwards and forwards.</li>
 <li>Visualize whose turn it is.</li>
 <li>Declare a winner at completion of the game.</li>
