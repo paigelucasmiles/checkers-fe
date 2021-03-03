@@ -7,7 +7,6 @@ This Checkers app was built as my Module 4 project during my Flatiron School Sof
 <h2>Technologies</h2>
 
 <ul>
- <li>Ruby on Rails</li>
  <li>React.js</li>
  <li>JavaScript</li>
  <li>HTML</li>
@@ -21,7 +20,7 @@ In a new terminal tab, navigate to the folder titled <b>checkers-frontend</b> an
 You are now ready to start using the current iteration of this checkers app! Please see the user stories section to learn more about the current functionality of the game.<br><br>
 
 <h2>Instructions</h2>
-Once you have opened the project you will be prompted to login. If this is your first time using the app, you will need to click <b>create account</b>. After you've created an account you will be automatically logged in and the checkers board will appear on your screen.<br><br>
+Once you have opened the project you the checkers board will appear on your screen.<br><br>
 White goes first!
 
 <h2>User Stories</h2>
