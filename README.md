@@ -19,7 +19,7 @@ Navigate to the folder titled <b>checkers-frontend</b> and run <code>npm install
 You are now ready to start using the current iteration of this checkers app! Please see the user stories section to learn more about the current functionality of the game.<br><br>
 
 <h2>Instructions</h2>
-Once you have opened the project you the checkers board will appear on your screen.<br><br>
+Once you've opened the project the checkers board will appear on your screen.<br><br>
 White goes first!
 
 <h2>User Stories</h2>
