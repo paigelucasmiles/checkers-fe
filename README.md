@@ -15,7 +15,7 @@ This Checkers app was built as my Module 4 project during my Flatiron School Sof
 
 <h2>Setup</h2>
 To run this project, install it locally by cloning this GitHub repository and opening it in your code editor.<br><br>
-Navigate to the folder titled <b>checkers-frontend</b> and run <code>npm install</code>, then <code>npm start</code>. As the Rails server is running on port 3000, you will be prompted to confirm running the app on another port. Confirm by typing <code>y</code>. This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>.
+Navigate to the folder titled <b>checkers-frontend</b> and run <code>npm install</code>, then <code>npm start</code>. As the Rails server is running on port 3000, you will be prompted to confirm running the app on another port. Confirm by typing <code>y</code>. This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>
 You are now ready to start using the current iteration of this checkers app! Please see the user stories section to learn more about the current functionality of the game.<br><br>
 
 <h2>Instructions</h2>
