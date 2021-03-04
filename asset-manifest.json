@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/checkers-fe/static/css/main.bb65bc47.chunk.css",
+    "main.js": "/checkers-fe/static/js/main.1398627b.chunk.js",
+    "main.js.map": "/checkers-fe/static/js/main.1398627b.chunk.js.map",
+    "runtime-main.js": "/checkers-fe/static/js/runtime-main.fa233df4.js",
+    "runtime-main.js.map": "/checkers-fe/static/js/runtime-main.fa233df4.js.map",
+    "static/js/2.15dbb0df.chunk.js": "/checkers-fe/static/js/2.15dbb0df.chunk.js",
+    "static/js/2.15dbb0df.chunk.js.map": "/checkers-fe/static/js/2.15dbb0df.chunk.js.map",
+    "static/js/3.6509752f.chunk.js": "/checkers-fe/static/js/3.6509752f.chunk.js",
+    "static/js/3.6509752f.chunk.js.map": "/checkers-fe/static/js/3.6509752f.chunk.js.map",
+    "index.html": "/checkers-fe/index.html",
+    "static/css/main.bb65bc47.chunk.css.map": "/checkers-fe/static/css/main.bb65bc47.chunk.css.map",
+    "static/js/2.15dbb0df.chunk.js.LICENSE.txt": "/checkers-fe/static/js/2.15dbb0df.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa233df4.js",
+    "static/js/2.15dbb0df.chunk.js",
+    "static/css/main.bb65bc47.chunk.css",
+    "static/js/main.1398627b.chunk.js"
+  ]
+}
