@@ -21,6 +21,10 @@ You are now ready to start using the current iteration of this checkers app! Ple
 Once you've opened the project the checkers board will appear on your screen.<br><br>
 White goes first!
 
+<h2>App Preview</h2>
+<b>Game Functionality</b>
+<img src="https://media.giphy.com/media/FLaUdf3JXr0Hf7a8gf/source.gif" alt="Demonstration of checkers game functionality" border="0">
+
 <h2>User Stories</h2>
 
 <h3>As a user, you will be able to:</h3>
