@@ -7,7 +7,6 @@ This Checkers app was built as my Module 4 project during my Flatiron School Sof
 <h2>Technologies</h2>
 
 <ul>
- <li>Ruby on Rails</li>
  <li>React.js</li>
  <li>JavaScript</li>
  <li>HTML</li>
@@ -16,12 +15,11 @@ This Checkers app was built as my Module 4 project during my Flatiron School Sof
 
 <h2>Setup</h2>
 To run this project, install it locally by cloning this GitHub repository and opening it in your code editor.<br><br>
-From there, navigate into the folder titled <b>checkers-backend</b> and run <code>bundle install</code>, <code>rails db:migrate</code> and finally, <code>rails s</code> in your terminal. You will need to start the server on port 3000.<br><br>
-In a new terminal tab, navigate to the folder titled <b>checkers-frontend</b> and run <code>npm install</code>, then <code>npm start</code>. As the Rails server is running on port 3000, you will be prompted to confirm running the app on another port. Confirm by typing <code>y</code>. This should prompt your browser to open a page at: <code>localhost:3001</code><br><br>.
+Navigate to the folder titled <b>checkers-frontend</b> and run <code>npm install</code>, then <code>npm start</code>.
 You are now ready to start using the current iteration of this checkers app! Please see the user stories section to learn more about the current functionality of the game.<br><br>
 
 <h2>Instructions</h2>
-Once you have opened the project you will be prompted to login. If this is your first time using the app, you will need to click <b>create account</b>. After you've created an account you will be automatically logged in and the checkers board will appear on your screen.<br><br>
+Once you've opened the project the checkers board will appear on your screen.<br><br>
 White goes first!
 
 <h2>User Stories</h2>
