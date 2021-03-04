@@ -9,7 +9,6 @@ This Checkers app was built as my Module 4 project during my Flatiron School Sof
 <ul>
  <li>React.js</li>
  <li>JavaScript</li>
- <li>HTML</li>
  <li>CSS</li>
 </ul>
 
